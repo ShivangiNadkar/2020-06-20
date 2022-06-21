@@ -17,5 +17,18 @@ wiki_hot_100s
 Which artist appears the most?
 
 ```{r}
-x <- wiki_hot_100s |> as_tibble() |> 
+x <- wiki_hot_100s |> as_tibble()
+```
+``` {r}
 x |> count(artist) |> arrange(desc(n)) |> rename(Count = n, Artist = artist)
+temp <- x |> count(artist) |> arrange(desc(n)) |> rename(Count = n, Artist = artist)
+```
+`r temp$artist [1]` appeared the most
+
+How many artists appear only once?
+
+```{r}
+temp |> filter(Count == 1)
+```
+
+1,818 artists appear only once
