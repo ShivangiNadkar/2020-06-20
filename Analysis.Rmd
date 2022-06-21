@@ -14,10 +14,8 @@ wiki_hot_100s
 
 ```
 
+Which artist appears the most?
 
 ```{r}
-x <- wiki_hot_100s |> as_tibble() 
-
-x |> count(artist) |> arrange(desc(n)) |> rename(Count = n, Arist = artist)
-```
-
+x <- wiki_hot_100s |> as_tibble() |> 
+x |> count(artist) |> arrange(desc(n)) |> rename(Count = n, Artist = artist)
