@@ -11,6 +11,13 @@ knitr::opts_chunk$set(echo = TRUE)
 library(billboard)
 library(tidyverse)
 wiki_hot_100s
+
 ```
 
+
+```{r}
+x <- wiki_hot_100s |> as_tibble() 
+
+x |> count(artist) |> arrange(desc(n)) |> rename(Count = n, Arist = artist)
+```
 
